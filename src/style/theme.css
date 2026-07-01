@@ -1,0 +1,243 @@
+:root {
+    --color-bg: #0A0B0C;
+    --color-bg-elevated: #131415;
+    --color-card: #17181A;
+    --color-card-hover: #1D1E20;
+
+    --color-accent: #F5F5F6;
+    --color-accent-dim: #9C9FA2;
+
+    --color-white: #F2F3F3;
+    --color-grey: #86898C;
+    --color-grey-dark: #2C2E30;
+
+    --color-border: #222325;
+    --color-border-strong: #38393C;
+
+    --font-display: 'Anton', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 22px;
+
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 0 1px rgba(245, 245, 246, 0.08), 0 0 40px rgba(245, 245, 246, 0.08);
+
+    --transition-fast: 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-medium: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    --space-page-x: 24px;
+    --space-page-y: 48px;
+    --space-section-gap: 56px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+html,
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    width: 100%;
+    min-height: 100%;
+    overscroll-behavior-y: none;
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.035), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(255, 255, 255, 0.025), transparent 45%);
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-grey-dark);
+    border-radius: var(--radius-sm);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    * {
+        scrollbar-width: none;
+    }
+}
+
+.sidebar {
+    background: var(--color-bg-elevated);
+    border-right: 1px solid var(--color-border);
+}
+
+.sidebar__brand {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar__brand-text {
+    color: var(--color-white);
+}
+
+.sidebar__group-label {
+    color: var(--color-grey);
+}
+
+.sidebar__link {
+    color: var(--color-grey);
+}
+
+.device-desktop .sidebar__link:hover {
+    background: var(--color-card);
+    color: var(--color-white);
+}
+
+.sidebar__link.is-active {
+    background: var(--color-card-hover);
+    color: var(--color-white);
+    border-color: var(--color-border-strong);
+}
+
+.sidebar__link-badge {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.sidebar__sublink {
+    color: var(--color-grey);
+}
+
+.device-desktop .sidebar__sublink:hover {
+    background: var(--color-card);
+    color: var(--color-white);
+}
+
+.sidebar__sublink.is-active {
+    color: var(--color-white);
+}
+
+.sidebar__alert {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+}
+
+.sidebar__alert-icon {
+    background: var(--color-grey-dark);
+    color: var(--color-accent);
+}
+
+.sidebar__alert-title {
+    color: var(--color-white);
+}
+
+.sidebar__alert-text {
+    color: var(--color-grey);
+}
+
+.sidebar__alert-close {
+    background: transparent;
+    color: var(--color-grey);
+}
+
+.device-desktop .sidebar__alert-close:hover {
+    background: var(--color-card-hover);
+    color: var(--color-white);
+}
+
+.sidebar__footer {
+    border-top: 1px solid var(--color-border);
+}
+
+.app-main__controller-badge {
+    background: var(--color-card);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-accent-dim);
+}
+
+.command-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+}
+
+.device-desktop .command-card:hover {
+    border-color: var(--color-border-strong);
+}
+
+.command-card__media {
+    background: var(--color-bg-elevated);
+    color: var(--color-accent-dim);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.device-desktop .command-card:hover .command-card__media {
+    color: var(--color-accent);
+}
+
+.command-card__plus {
+    color: var(--color-grey);
+}
+
+.command-card__name {
+    color: var(--color-white);
+}
+
+.command-card__desc {
+    color: var(--color-grey);
+}
+
+.device-desktop .sidebar__user:hover {
+    background: var(--color-card);
+    border-color: var(--color-border);
+}
+
+.sidebar__user-avatar {
+    background: var(--color-grey-dark);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
+}
+
+.sidebar__user-name {
+    color: var(--color-white);
+}
+
+.sidebar__user-role {
+    color: var(--color-grey);
+}
+
+.sidebar__toggle {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-white);
+}
+
+.sidebar__scrim {
+    background: rgba(0, 0, 0, 0.6);
+}

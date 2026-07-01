@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA SPORTS FC 26</title>
+    <link rel="icon" type="image/png" href="src/image/fc26.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style/theme.css">
+    <link rel="stylesheet" href="src/style/index.css">
+</head>
+
+<body>
+    <section class="view is-active" id="viewControllerSelect">
+        <main class="select-screen">
+            <div class="select-screen__header">
+                <span class="select-screen__eyebrow">Planícies de Sal de Boneville</span>
+                <h1 class="select-screen__title">Escolha seu <span>controle</span></h1>
+                <p class="select-screen__subtitle">Selecione o layout de comandos que será usado durante toda a
+                    experiência de corrida.</p>
+            </div>
+
+            <div class="controller-grid" id="controllerGrid">
+                <button class="controller-card" data-controller="xbox" type="button">
+                    <img class="controller-card__bg" src="src/image/xboxone.png" alt="Controle Xbox One">
+                    <div class="controller-card__scrim"></div>
+                    <span class="controller-card__check"><i data-lucide="check"></i></span>
+                    <div class="controller-card__overlay">
+                        <span class="controller-card__name">Xbox</span>
+                        <span class="controller-card__desc">Layout de comandos padrão Xbox Series X|S e Xbox
+                            One</span>
+                    </div>
+                </button>
+
+                <button class="controller-card" data-controller="playstation" type="button">
+                    <img class="controller-card__bg" src="src/image/ps5.png" alt="Controle PS5">
+                    <div class="controller-card__scrim"></div>
+                    <span class="controller-card__check"><i data-lucide="check"></i></span>
+                    <div class="controller-card__overlay">
+                        <span class="controller-card__name">PS4 / PS5</span>
+                        <span class="controller-card__desc">Layout de comandos padrão DualShock 4 e DualSense</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="select-screen__footer">
+                <button class="btn-continue" id="btnContinue" type="button" disabled>
+                    <span>Continuar</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+                <span class="select-screen__hint" id="selectionHint">Selecione um controle para continuar</span>
+            </div>
+        </main>
+    </section>
+
+    <section class="view" id="viewSidebar">
+        <div class="app-layout" id="appLayout">
+            <button class="sidebar__toggle" id="sidebarToggle" type="button" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="sidebar__scrim" id="sidebarScrim"></div>
+
+            <aside class="sidebar">
+                <div class="sidebar__brand">
+                    <span class="sidebar__brand-text">EA Sports FC 26</span>
+                </div>
+
+                <nav class="sidebar__nav">
+                    <div>
+                        <span class="sidebar__group-label">Comandos</span>
+                        <ul class="sidebar__list" id="commandsList">
+                            <li>
+                                <button class="sidebar__link is-active" data-page="chutes" type="button">
+                                    <i data-lucide="crosshair"></i>
+                                    <span>Chutes</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="passes" type="button">
+                                    <i data-lucide="send"></i>
+                                    <span>Passes</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="dribles" type="button">
+                                    <i data-lucide="move"></i>
+                                    <span>Dribles</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="defesa" type="button">
+                                    <i data-lucide="shield"></i>
+                                    <span>Defesa</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="goleiro" type="button">
+                                    <i data-lucide="hand"></i>
+                                    <span>Goleiro</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="movimentacao" type="button">
+                                    <i data-lucide="footprints"></i>
+                                    <span>Movimentação / Sprint</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="cruzamentos" type="button">
+                                    <i data-lucide="corner-up-right"></i>
+                                    <span>Cruzamentos</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="sidebar__link" data-page="faltas" type="button">
+                                    <i data-lucide="flag"></i>
+                                    <span>Faltas e Escanteios</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span class="sidebar__group-label">Geral</span>
+                        <ul class="sidebar__list">
+                            <li>
+                                <button class="sidebar__link" id="btnBackToController" type="button">
+                                    <i data-lucide="gamepad-2"></i>
+                                    <span>Trocar controle</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="sidebar__alert" id="sidebarAlert" role="alert">
+                    <span class="sidebar__alert-icon"><i data-lucide="sparkles"></i></span>
+                    <div class="sidebar__alert-body">
+                        <span class="sidebar__alert-title">Comandos atualizados</span>
+                        <span class="sidebar__alert-text">Novos ajustes de mapeamento foram adicionados.</span>
+                    </div>
+                    <button class="sidebar__alert-close" id="sidebarAlertClose" type="button" aria-label="Dispensar">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="sidebar__footer">
+                    <div class="sidebar__user">
+                        <img class="sidebar__user-avatar" src="src/image/eu.jpg" alt="Foto de perfil">
+                        <div class="sidebar__user-info">
+                            <span class="sidebar__user-name">Anônimo</span>
+                            <span class="sidebar__user-role">Perfil local</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="app-main">
+                <div class="app-main__header">
+                    <span class="app-main__eyebrow">Planícies de Sal de Boneville</span>
+                    <div class="app-main__heading-row">
+                        <h1 class="app-main__title" id="commandPageTitle">Chutes</h1>
+                        <span class="app-main__controller-badge" id="controllerBadge">
+                            <i data-lucide="gamepad-2"></i>
+                            <span id="controllerBadgeText">Xbox</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="commands-grid" id="commandsGrid"></div>
+            </main>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="src/js/commandIcons.js"></script>
+    <script src="src/js/commandSvgIcons.js"></script>
+    <script src="src/js/commandsData.js"></script>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>
