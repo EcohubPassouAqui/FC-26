@@ -20,8 +20,8 @@ const CONTROLLER_LABELS = {
     ps5: "PS5"
 };
 const CONTROLLER_IMAGES = {
-    xbox: "xboxone.png",
-    ps5: "ps5.png"
+    xbox: "image/xboxone.png",
+    ps5: "image/ps5.png"
 };
 function arrowGlyph(rotateDeg) {
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(' + rotateDeg + ' 12 12)"><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"></circle><path d="M12 9.6V3.4M8.8 6.4L12 3.2l3.2 3.2"></path></g></svg>';
